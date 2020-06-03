@@ -1,40 +1,15 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>360&deg; Image Gallery</title>
-    <meta name="description" content="360&deg; Image Gallery - A-Frame">
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
-    
-    <!-- Image link template to be reused. -->
-    <script id="link" type="text/html">
-      <a-entity class="link"
-        geometry="primitive: plane; height: 1; width: 1"
-        material="shader: flat; src: ${thumb}"
-        event-set__mouseenter="scale: 1.2 1.2 1"
-        event-set__mouseleave="scale: 1 1 1"
-        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
-        proxy-event="event: click; to: #image-360; as: fade"
-        sound="on: click; src: #click-sound"></a-entity>
-    </script>
+    <title>Adding a Videosphere</title>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
   </head>
   <body>
+    <a-scene>
+      <a-assets>
+        <video id="video" src="singapore.mp4" autoplay loop crossorigin="anonymous"></video>
+      </a-assets>
 
-<a-scene>
-  <a-assets>
-    <video id="singapore" autoplay loop="true" src="singapore.mp4"></video>
-  </a-assets>
-
-  <!-- Using the asset management system. -->
-  <a-video src="#singapore" width="16" height="9" position="0 0 -20"></a-video>
-
-  <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
-  <a-video src="singapore.mp4"></a-video>
-</a-scene>
-
+      <a-videosphere src="#video" rotation="0 80 0"></a-videosphere> 
+    </a-scene>
   </body>
 </html>
