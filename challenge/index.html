@@ -23,16 +23,18 @@
     </script>
   </head>
   <body>
+
 <a-scene>
   <a-assets>
-    <video id="singapore" autoplay loop="true" src="singapore.mp4"> </video>
+    <video id="singapore" autoplay loop="true" src="penguin-sledding.mp4"></video>
   </a-assets>
 
   <!-- Using the asset management system. -->
-  <a-videosphere src="#singapore"></a-videosphere>
+  <a-video src="#singapore" width="16" height="9" position="0 0 -20"></a-video>
 
   <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
-  <a-videosphere src="singapore.mp4"></a-videosphere>
+  <a-video src="singapore.mp4"></a-video>
 </a-scene>
+
   </body>
 </html>
